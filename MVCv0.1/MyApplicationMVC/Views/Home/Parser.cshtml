@@ -1,0 +1,52 @@
+﻿
+@{
+    ViewBag.Title = "Parser";
+}
+
+<h2>Parser</h2>
+<p>Загрузите в обработчик лог файл</p>
+<div class="SelectLogFile">
+
+    @using (Html.BeginForm("Upload", "Home", FormMethod.Post, new { enctype = "multipart/form-data" }))
+    {
+        <input id="ButtonUploadFile" type="file" name="upload"/><br>
+        <input id="ButtonSaveFile" type="submit" value="Загрузить"/>
+        <p></p>
+    }
+
+</div>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <tbody>
+                <tr style="color:aqua;">
+                    <th>№ </th>
+                    <th>IP </th>
+                    <th>DateTime </th>
+                    <th>TimeZone </th>
+                    <th>TypeRequest </th>
+                    <th>StatusCode </th>
+                    <th>FileDownload </th>
+                    <th>SizeTransmitDate </th>
+                </tr>
+                @if (ViewBag.Strings != null)
+                {
+                    foreach (var el in ViewBag.Strings)
+                    {
+                <tr style="background:RGBA(34,34,34,0.7); color:aquamarine">
+                    <td><p>@el.Id</p></td>
+                    <td><p><a href="/Home/IpInfo">@el.Ip</a></p></td>
+                    <td><p>@el.DateTime</p></td>
+                    <td><p>@el.TimeZone</p></td>
+                    <td><p>@el.TypeRequest</p></td>
+                    <td><p>@el.StatusCode</p></td>
+                    <td><p>@el.FileDownload</p></td>
+                    <td><p>@el.SizeTransmitDate</p></td>
+                </tr>
+                    }
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

@@ -1,0 +1,33 @@
+﻿@model MyApplicationMVC.Models.IpInfo
+@{
+    ViewBag.Title = "IpInfo";
+}
+
+<h2>IpInfo</h2>
+
+<div class="row">
+    <div class="col-md-6">
+        <table class="table">
+            <tbody>
+                <tr style="color:aqua;">
+                    <th>IP </th>
+                    <th>Status request </th>
+                    <th>Country </th>
+                    <th>City </th>
+                    <th>Provider </th>
+                </tr>
+                @*@if (ViewBag.Strings != null)
+                {*@
+
+                <tr style="background:RGBA(34,34,34,0.7); color:aquamarine">
+                    <td><p>ip</p></td>
+                    <td><p>@Model.status</p></td>
+                    <td><p>@Model.country</p></td>
+                    <td><p>@Model.city</p></td>
+                    <td><p>@Model.org</p></td>
+                </tr>
+                @*}*@
+            </tbody>
+        </table>
+    </div>
+</div>
